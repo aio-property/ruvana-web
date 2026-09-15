@@ -7,9 +7,9 @@ import { useState } from "react";
 import { Brand } from "@/components/brand";
 
 const modes = [
-  { href: "/", label: "Cari hunian", match: "public" },
-  { href: "/owner", label: "Pemilik properti", match: "owner" },
-  { href: "/internal", label: "Management", match: "internal" },
+  { href: "/", label: "Explore", match: "public" },
+  { href: "/owner", label: "Partner Center", match: "owner" },
+  { href: "/internal", label: "Ruvana HQ", match: "internal" },
 ];
 
 export function SiteHeader() {
@@ -25,7 +25,7 @@ export function SiteHeader() {
           {modes.map((item) => <Link key={item.href} className={current === item.match ? "is-active" : ""} href={item.href}>{item.label}</Link>)}
         </nav>
         <div className="topbar__actions">
-          {current === "public" ? <Link className="topbar__host" href="/owner/properties/new">Daftarkan properti</Link> : null}
+          {current === "public" ? <Link className="topbar__host" href="/owner/properties/new">Jadi Partner</Link> : null}
           <Link className="icon-button" href={current === "internal" ? "/internal/support" : current === "owner" ? "/owner/inbox" : "/messages"} aria-label="Notifikasi"><Bell size={18} /><i /></Link>
           <Link className="profile-chip" href={current === "owner" ? "/owner/settings" : current === "internal" ? "/internal/audit" : "/profile"}><span>EC</span><strong>Evans</strong><ChevronDown size={15} /></Link>
           <button className="mobile-toggle" onClick={() => setOpen((value) => !value)} aria-label="Buka menu" aria-expanded={open}>{open ? <X size={21} /> : <Menu size={21} />}</button>

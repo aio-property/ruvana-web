@@ -1,30 +1,35 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { CalendarDays, Clock3, MapPin, Search, Users } from "lucide-react";
+import { CalendarDays, Car, Compass, Hotel, Luggage, MapPin, Plane, Search, TrainFront, Users } from "lucide-react";
 import { useState } from "react";
 
 export function SearchPanel({ compact = false }: { compact?: boolean }) {
   const router = useRouter();
-  const [stay, setStay] = useState("harian");
-  const [location, setLocation] = useState("Jakarta Selatan");
+  const [service, setService] = useState("stay");
+  const [location, setLocation] = useState("Bali");
+
+  const services = [
+    ["stay", "Stay", Hotel], ["flight", "Pesawat", Plane], ["train", "Kereta", TrainFront],
+    ["rental", "Rental", Car], ["trip", "Paket Trip", Luggage], ["experience", "Aktivitas", Compass],
+  ] as const;
 
   function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    router.push(`/search?location=${encodeURIComponent(location)}&stay=${stay}`);
+    router.push(`/search?location=${encodeURIComponent(location)}&service=${service}`);
   }
 
   return (
     <form className={`search-panel ${compact ? "search-panel--compact" : ""}`} onSubmit={submit}>
-      <div className="stay-switch" role="group" aria-label="Durasi sewa">
-        {["harian", "bulanan", "tahunan"].map((item) => <button type="button" key={item} className={stay === item ? "is-active" : ""} onClick={() => setStay(item)}>{item[0].toUpperCase() + item.slice(1)}</button>)}
+      <div className="stay-switch service-switch" role="group" aria-label="Layanan perjalanan">
+        {services.map(([id, label, Icon]) => <button type="button" key={id} className={service === id ? "is-active" : ""} onClick={() => setService(id)}><Icon size={16} />{label}</button>)}
       </div>
       <div className="search-fields">
-        <label><small>Lokasi</small><span><MapPin size={18} /><input value={location} onChange={(event) => setLocation(event.target.value)} aria-label="Lokasi" /></span></label>
-        <label><small>Mulai tinggal</small><span><CalendarDays size={18} /><input type="date" defaultValue="2026-09-20" aria-label="Mulai tinggal" /></span></label>
-        <label><small>Durasi</small><span><Clock3 size={18} /><input key={stay} defaultValue={stay === "harian" ? "3 malam" : stay === "bulanan" ? "3 bulan" : "1 tahun"} aria-label="Durasi" /></span></label>
-        <label><small>Penghuni</small><span><Users size={18} /><input defaultValue="2 orang" aria-label="Jumlah penghuni" /></span></label>
-        <button className="search-submit" type="submit"><Search size={18} /><span>Cari hunian</span></button>
+        <label><small>Destinasi</small><span><MapPin size={18} /><input value={location} onChange={(event) => setLocation(event.target.value)} aria-label="Destinasi" /></span></label>
+        <label><small>Berangkat / check-in</small><span><CalendarDays size={18} /><input type="date" defaultValue="2026-09-20" aria-label="Tanggal perjalanan" /></span></label>
+        <label><small>Pulang / check-out</small><span><CalendarDays size={18} /><input type="date" defaultValue="2026-09-23" aria-label="Tanggal selesai" /></span></label>
+        <label><small>Traveler</small><span><Users size={18} /><input defaultValue="2 orang" aria-label="Jumlah traveler" /></span></label>
+        <button className="search-submit" type="submit"><Search size={18} /><span>Cari sekarang</span></button>
       </div>
     </form>
   );

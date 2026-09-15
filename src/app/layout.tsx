@@ -3,8 +3,8 @@ import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: { default: "RUVANA — All-in-One Property Solution", template: "%s · RUVANA" },
-  description: "Cari hunian, booking, pembayaran, property management, dan operasional dalam satu platform.",
+  title: { default: "RUVANA — Tourism & Travel Superapp", template: "%s · RUVANA" },
+  description: "Pesan stay, transportasi, rental kendaraan, paket wisata, dan aktivitas dalam satu perjalanan bersama Ruvana.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
