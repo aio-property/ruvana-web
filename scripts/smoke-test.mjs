@@ -9,7 +9,7 @@ const root = fileURLToPath(rootUrl);
 const baseUrl = `http://127.0.0.1:${port}`;
 
 const routes = [
-  ["/", "seluruh perjalanan"],
+  ["/", "Langit lebih luas"],
   ["/explore/attraction", "Cari dan bandingkan"],
   ["/explore/attraction/attraction-safari", "Taman Safari Indonesia Bogor"],
   ["/explore/marine/marine-yacht", "Private Yacht Sunset Charter"],
@@ -18,9 +18,9 @@ const routes = [
   ["/checkout?service=marine-jetski", "CHECKOUT"],
   ["/account", "Perjalanan aktif"],
   ["/account/trips", "Itinerary terpadu"],
-  ["/account/wallet", "RUVANA WALLET"],
+  ["/account/wallet", "NUSAVYRA WALLET"],
   ["/account/insurance", "Pusat klaim"],
-  ["/account/support", "RUVANA CARE"],
+  ["/account/support", "NUSAVYRA CARE"],
   ["/owner", "Selamat malam"],
   ["/owner/properties", "Properti Anda"],
   ["/partner", "seluruh bisnis pariwisata"],

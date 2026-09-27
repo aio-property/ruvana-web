@@ -1,6 +1,6 @@
-# RUVANA Web
+# NUSAVYRA Web
 
-All-in-one tourism and travel superapp prototype for travelers, property owners, tourism partners, and Ruvana internal operations. This phase uses realistic JSON mock data so the complete ecosystem and cross-service journeys can be reviewed before backend contracts are connected.
+All-in-one tourism and travel superapp prototype for travelers, property owners, tourism partners, and Nusavyra internal operations. This phase uses realistic JSON mock data so the complete ecosystem and cross-service journeys can be reviewed before backend contracts are connected.
 
 ## Product areas
 
@@ -29,7 +29,7 @@ pnpm install
 pnpm dev
 ```
 
-Open `http://localhost:3000`. The role switcher in the global header provides direct access to Explore, Traveler Center, Property Owner, Partner Ecosystem, and Ruvana HQ.
+Open `http://localhost:3000`. The role switcher in the global header provides direct access to Explore, Traveler Center, Property Owner, Partner Ecosystem, and Nusavyra HQ.
 
 ## Quality checks
 

@@ -1,4 +1,4 @@
 import type { Metadata } from "next";
-import { ProfilePage } from "@/components/customer-pages";
+import { AccountPage } from "@/components/account-pages";
 export const metadata: Metadata = { title: "Profil" };
-export default function Page() { return <ProfilePage />; }
+export default function Page() { return <AccountPage section="profile" />; }

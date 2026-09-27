@@ -11,7 +11,7 @@ const modes = [
   { href: "/account", label: "Traveler", match: "account" },
   { href: "/owner", label: "Pemilik Properti", match: "owner" },
   { href: "/partner", label: "Partner", match: "partner" },
-  { href: "/internal", label: "Ruvana HQ", match: "internal" },
+  { href: "/internal", label: "Nusavyra HQ", match: "internal" },
 ];
 
 export function SiteHeader() {

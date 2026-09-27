@@ -1,0 +1,27 @@
+{
+  "name": "NUSAVYRA",
+  "pronunciation": "nu-sa-vai-ra",
+  "tagline": "One journey, every possibility.",
+  "positioning": "An all-in-one tourism ecosystem that connects travelers, properties, mobility, experiences, events, protection, and premium transport.",
+  "nameRationale": {
+    "nusa": "Kepulauan, destinasi, dan akar Indonesia.",
+    "vyra": "Kata ciptaan yang memberi kesan bergerak, luas, dan modern."
+  },
+  "visualSystem": {
+    "theme": "Living Sky",
+    "primary": "#0EA5E9",
+    "primaryDeep": "#0284C7",
+    "navy": "#082F49",
+    "horizon": "#2563EB",
+    "skyLight": "#7DD3FC",
+    "skyPale": "#F0F9FF",
+    "sunAccent": "#FBBF24",
+    "surface": "#FFFFFF"
+  },
+  "clearance": {
+    "checkedAt": "2026-09-27",
+    "scope": ["exact web search", "app stores", "public company profiles", "public trademark indexes"],
+    "result": "No exact-match public result found during preliminary screening.",
+    "legalNote": "Formal DJKI and WIPO trademark clearance is required before commercial registration or launch."
+  }
+}

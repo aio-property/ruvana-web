@@ -87,7 +87,7 @@ export const properties: Property[] = [
     bathrooms: 3,
     guests: 6,
     size: 210,
-    badge: "RUVANA Select",
+    badge: "NUSAVYRA Select",
     instantBook: true,
     description: "Vila tropis privat dengan infinity pool, taman rimbun, layanan housekeeping harian, dan suasana tenang dekat pusat Ubud.",
     amenities: ["Infinity pool", "Sarapan tersedia", "Housekeeping", "Wi-Fi", "Bathtub", "Dapur", "Airport transfer", "Concierge"],
@@ -213,9 +213,9 @@ export const properties: Property[] = [
 ];
 
 export const bookings: Booking[] = [
-  { id: "RUV-260920-8F31", propertySlug: "verde-residence-sky-loft", guest: "Evans Moris Cheahn", start: "20 Sep 2026", end: "23 Sep 2026", status: "Confirmed", total: 2832500, payment: "Virtual Account BCA", channel: "RUVANA Web" },
-  { id: "RUV-260712-21A4", propertySlug: "dago-forest-serviced-studio", guest: "Evans Moris Cheahn", start: "12 Jul 2026", end: "12 Agu 2026", status: "Completed", total: 7420000, payment: "QRIS", channel: "RUVANA App" },
-  { id: "RUV-261002-4D88", propertySlug: "ubud-riverstone-pool-villa", guest: "Nadia Putri", start: "2 Okt 2026", end: "5 Okt 2026", status: "Pending payment", total: 6034000, payment: "Kartu kredit", channel: "RUVANA Web" },
+  { id: "NSV-DEMO-A", propertySlug: "verde-residence-sky-loft", guest: "Traveler Demo A", start: "20 Sep 2026", end: "23 Sep 2026", status: "Confirmed", total: 2832500, payment: "Pembayaran virtual demo", channel: "NUSAVYRA Web" },
+  { id: "NSV-DEMO-B", propertySlug: "dago-forest-serviced-studio", guest: "Traveler Demo B", start: "12 Jul 2026", end: "12 Agu 2026", status: "Completed", total: 7420000, payment: "QRIS demo", channel: "NUSAVYRA App" },
+  { id: "NSV-DEMO-C", propertySlug: "ubud-riverstone-pool-villa", guest: "Traveler Demo C", start: "2 Okt 2026", end: "5 Okt 2026", status: "Pending payment", total: 6034000, payment: "Kartu pembayaran demo", channel: "NUSAVYRA Web" },
 ];
 
 export const ownerProperties = [
@@ -225,20 +225,20 @@ export const ownerProperties = [
 ];
 
 export const paymentRows = [
-  { id: "PAY-260914-2091", booking: "RUV-260920-8F31", customer: "Evans M.", method: "VA BCA", amount: "Rp2.832.500", risk: 12, status: "Paid", time: "18:31" },
-  { id: "PAY-260914-2088", booking: "RUV-261002-4D88", customer: "Nadia P.", method: "Visa •• 9821", amount: "Rp6.034.000", risk: 32, status: "Pending", time: "18:24" },
-  { id: "PAY-260914-2074", booking: "RUV-260914-X21A", customer: "Kevin T.", method: "QRIS", amount: "Rp3.240.000", risk: 78, status: "Review", time: "17:56" },
-  { id: "PAY-260914-2059", booking: "RUV-260914-L07F", customer: "Dinda A.", method: "Installment", amount: "Rp21.300.000", risk: 92, status: "Held", time: "17:40" },
+  { id: "DEMO-PAY-A", booking: "NSV-DEMO-A", customer: "Traveler Demo A", method: "Pembayaran virtual", amount: "Rp2.832.500", risk: 12, status: "Paid", time: "18:31" },
+  { id: "DEMO-PAY-B", booking: "NSV-DEMO-C", customer: "Traveler Demo C", method: "Kartu contoh", amount: "Rp6.034.000", risk: 32, status: "Pending", time: "18:24" },
+  { id: "DEMO-PAY-C", booking: "NSV-DEMO-D", customer: "Traveler Demo D", method: "QRIS demo", amount: "Rp3.240.000", risk: 78, status: "Review", time: "17:56" },
+  { id: "DEMO-PAY-D", booking: "NSV-DEMO-E", customer: "Traveler Demo E", method: "Cicilan demo", amount: "Rp21.300.000", risk: 92, status: "Held", time: "17:40" },
 ];
 
 export const supportTickets = [
-  { id: "SUP-4819", title: "AC unit tidak dingin", property: "Verde Residence KNG-1208", customer: "Evans M.", priority: "High", status: "Assigned", sla: "18m", owner: "Dimas" },
-  { id: "SUP-4812", title: "Permintaan early check-in", property: "Ubud Riverstone VIL-02", customer: "Nadia P.", priority: "Medium", status: "Waiting guest", sla: "42m", owner: "Ayu" },
-  { id: "SUP-4806", title: "Refund deposit belum diterima", property: "Dago Forest DGO-0711", customer: "Raka F.", priority: "High", status: "Escalated", sla: "08m", owner: "Sinta" },
+  { id: "DEMO-CASE-A", title: "AC unit tidak dingin", property: "Verde Residence", customer: "Traveler Demo A", priority: "High", status: "Assigned", sla: "18m", owner: "Operator Demo A" },
+  { id: "DEMO-CASE-B", title: "Permintaan early check-in", property: "Ubud Riverstone", customer: "Traveler Demo B", priority: "Medium", status: "Waiting guest", sla: "42m", owner: "Operator Demo B" },
+  { id: "DEMO-CASE-C", title: "Refund deposit belum diterima", property: "Dago Forest", customer: "Traveler Demo C", priority: "High", status: "Escalated", sla: "08m", owner: "Operator Demo C" },
 ];
 
 export const campaigns = [
-  { slug: "move-in-september", name: "RUVANA Move-in September", channel: "Meta + TikTok", spend: "Rp84,2 jt", revenue: "Rp522,1 jt", roas: "6,2×", status: "Active", progress: 78 },
+  { slug: "move-in-september", name: "NUSAVYRA Move-in September", channel: "Meta + TikTok", spend: "Rp84,2 jt", revenue: "Rp522,1 jt", roas: "6,2×", status: "Active", progress: 78 },
   { slug: "weekend-city-escape", name: "Weekend City Escape", channel: "Google + Meta", spend: "Rp31,8 jt", revenue: "Rp152,4 jt", roas: "4,8×", status: "Active", progress: 61 },
   { slug: "owner-onboarding", name: "Owner Onboarding Q3", channel: "LinkedIn + Search", spend: "Rp22,1 jt", revenue: "128 leads", roas: "3,9×", status: "Optimizing", progress: 42 },
 ];

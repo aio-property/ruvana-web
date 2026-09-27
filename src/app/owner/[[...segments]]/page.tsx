@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { NewPropertyPage, OwnerCalendarPage, OwnerCampaignDetailPage, OwnerCampaignsPage, OwnerFinancePage, OwnerInboxPage, OwnerOperationsPage, OwnerOverviewPage, OwnerPropertiesPage, OwnerPropertyDetailPage, OwnerReservationsPage, OwnerSettingsPage } from "@/components/owner-pages";
+import { NewPropertyPage, OwnerCalendarPage, OwnerCampaignDetailPage, OwnerCampaignsPage, OwnerOperationsPage, OwnerOverviewPage, OwnerPropertiesPage, OwnerPropertyDetailPage } from "@/components/owner-pages";
+import { OwnerFinanceSkyPage, OwnerInboxSkyPage, OwnerReservationsSkyPage, OwnerSettingsSkyPage } from "@/components/owner-sky-pages";
 
 export const metadata: Metadata = { title: "Owner panel" };
 export function generateStaticParams() {
@@ -18,12 +19,12 @@ export default async function Page({ params }: { params: Promise<{ segments?: st
   if (section === "properties" && id === "new") return <NewPropertyPage />;
   if (section === "properties" && id) return <OwnerPropertyDetailPage id={id} />;
   if (section === "properties") return <OwnerPropertiesPage />;
-  if (section === "reservations") return <OwnerReservationsPage />;
+  if (section === "reservations") return <OwnerReservationsSkyPage />;
   if (section === "calendar") return <OwnerCalendarPage />;
   if (section === "operations") return <OwnerOperationsPage />;
-  if (section === "finance") return <OwnerFinancePage />;
+  if (section === "finance") return <OwnerFinanceSkyPage />;
   if (section === "campaigns" && id) return <OwnerCampaignDetailPage slug={id} />;
   if (section === "campaigns") return <OwnerCampaignsPage />;
-  if (section === "inbox") return <OwnerInboxPage />;
-  return <OwnerSettingsPage />;
+  if (section === "inbox") return <OwnerInboxSkyPage />;
+  return <OwnerSettingsSkyPage />;
 }
