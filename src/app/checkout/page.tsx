@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { CheckoutFlow } from "@/components/checkout-flow";
-import { getProperty } from "@/lib/mock-data";
+import { Suspense } from "react";
+import { CheckoutRouter } from "@/components/checkout-router";
 
 export const metadata: Metadata = { title: "Checkout" };
-export default function Page() { return <main className="checkout-page content-width"><CheckoutFlow property={getProperty("verde-residence-sky-loft")} /></main>; }
+export default function Page() { return <main className="checkout-page content-width"><Suspense fallback={<div className="checkout-loading">Menyiapkan checkout aman…</div>}><CheckoutRouter /></Suspense></main>; }

@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BarChart3, Building2, CalendarDays, CreditCard, FileClock, FileText, House, LayoutDashboard, Megaphone, MessageSquare, Settings, Shield, ShieldCheck, WalletCards, Wrench } from "lucide-react";
+import { CalendarDays, FileClock, House, LayoutDashboard, Megaphone, MessageSquare, Settings, ShieldCheck, WalletCards, Wrench } from "lucide-react";
+import { PlatformIcon } from "@/components/platform-icon";
+import { internalModules } from "@/lib/ecosystem";
 
 const ownerNav = [
   { href: "/owner", label: "Ringkasan", icon: LayoutDashboard },
@@ -16,16 +18,7 @@ const ownerNav = [
   { href: "/owner/settings", label: "Pengaturan", icon: Settings },
 ];
 
-const internalNav = [
-  { href: "/internal", label: "Command center", icon: LayoutDashboard },
-  { href: "/internal/supply", label: "Supply", icon: Building2 },
-  { href: "/internal/bookings", label: "Booking", icon: CalendarDays },
-  { href: "/internal/payments", label: "Payment", icon: CreditCard },
-  { href: "/internal/risk", label: "Risk & trust", icon: Shield },
-  { href: "/internal/growth", label: "Growth", icon: BarChart3 },
-  { href: "/internal/support", label: "Support", icon: MessageSquare, count: 12 },
-  { href: "/internal/audit", label: "Audit log", icon: FileText },
-];
+const internalNav = internalModules.map((item) => ({ href: item.slug === "command" ? "/internal" : `/internal/${item.slug}`, label: item.name, iconName: item.icon, group: item.group, count: item.slug === "support" ? 12 : undefined }));
 
 export function WorkspaceNav({ type }: { type: "owner" | "internal" }) {
   const pathname = usePathname();
@@ -34,7 +27,7 @@ export function WorkspaceNav({ type }: { type: "owner" | "internal" }) {
   return (
     <aside className="workspace-sidebar">
       <p>{type === "owner" ? "OWNER PANEL" : "INTERNAL MANAGEMENT"}</p>
-      <nav>{nav.map((item) => { const Icon = item.icon; const exactRoot = item.href === `/${type}`; const active = exactRoot ? pathname === item.href : pathname.startsWith(item.href); return <Link key={item.href} className={active ? "is-active" : ""} href={item.href}><Icon size={18} /><span>{item.label}</span>{item.count ? <b>{item.count}</b> : null}</Link>; })}</nav>
+      <nav>{nav.map((item) => { const exactRoot = item.href === `/${type}`; const active = exactRoot ? pathname === item.href : pathname.startsWith(item.href); const icon = "icon" in item ? <item.icon size={18} /> : <PlatformIcon name={item.iconName} size={18} />; return <Link key={item.href} className={active ? "is-active" : ""} href={item.href}>{icon}<span>{item.label}</span>{item.count ? <b>{item.count}</b> : null}</Link>; })}</nav>
       <div className="workspace-health"><span><ShieldCheck size={18} /></span><p><strong>{type === "owner" ? "Properti terlindungi" : "System normal"}</strong><small>{type === "owner" ? "Proteksi aktif di 3 unit" : "Diperiksa 2 menit lalu"}</small></p></div>
     </aside>
   );
